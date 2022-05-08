@@ -1,0 +1,23 @@
+﻿DO NOT add the Microsoft.Office.Interop.Excel NuGet package to the project!
+
+Here's what I did instead...
+
+I right-clicked Dependencies in Solution Explorer and chose "Add Project Reference...".
+
+In the resulting dialog I expanded the COM node by clicking it at the left.
+
+In the Search box I typed "Microsoft Excel" and this appeared:
+Microsoft Excel 16.0 Object Library
+
+I then ticked the checkbox next to it and clicked OK to add a reference to it to my project.
+
+After doing that, this line in ExcelApp.cs was no longer shown in red...
+using ExcelInterop = Microsoft.Office.Interop.Excel;
+
+Similarly I added a reference to this:
+Microsoft Office 16.0 Object Library
+
+After doing that, this line in ExcelApp.cs was no longer shown in red...
+using System.Runtime.InteropServices;
+
+That using statement is useful to 
